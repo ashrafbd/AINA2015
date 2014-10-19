@@ -1,0 +1,81 @@
+20 October 2015
+Purpose: Submission to The 29th IEEE International Conference on Advanced Information Networking and Applications (AINA-2015) 
+Date: March 24-27, 2015
+Venue: Gwangju, Korea
+http://voyager.ce.fit.ac.jp/conf/aina/2015/index.html
+
+The conference covers theory, design and application of computer networks and distributed computing and information systems. Aside from the regular presentations, the conference will include keynote addresses with speakers from both industry and academia.
+
+Date:
+Paper Submission Deadline	October 25, 2014 (Extended)
+Author Notification	December 20, 2014
+Final Manuscript Due	January 20, 2015
+Author Registration	January 20, 2015
+
+For further information, please contact the steering committee chairs:
+Professor Leonard Barolli (barolli{at}fit.ac.jp), Fukuoka Institute of Technology, Japan
+Professor Makoto Takizawa (makoto.takizawa{at}computer.org), Hosei University, Japan 
+
+Paper Submission
+Paper Submission for Review
+
+Submit a full paper of at most 8 pages (Conference Publishing Services (CPS) Proceedings Manuscripts style: two columns, single-spaced), including figures and references, using 10 fonts, and number each page. You can confirm the CPS Proceedings Author Guidelines at the following web page: 
+URL: http://www.computer.org/portal/web/cscps/submission.
+
+EDAS: Submit paper  http://edas.info/N17537
+
+Accepted papers will be given guidelines in preparing and submitting the final manuscript(s) together with the notification of acceptance. Authors of accepted papers, or at least one of them, are  requested to register and present their work at the conference, otherwise their papers will be removed from the digital library after the conference.
+
+Distinguished papers accepted and presented at the conference and also the workshops of AINA-2015, after further revisions, will be submitted for publication in special issues of prestigious international journals.
+http://www.computer.org/portal/web/cscps/submission/
+
+********************************** Files **********************************
+README                 - This file.
+icara.tex              - The main article file for conference papers.
+icara.bib              - Bibliography file
+IEEEtran.cls           - The IEEEtran LaTeX class file.
+IEEEtran.bst           - The standard IEEEtran BibTeX style file. For use with IEEE work.
+IEEEtranS.bst          - A version of IEEEtran.bst that sorts the entries.  Some IEEE conferences/publications may use/allow sorted bibliographies.
+***************************************************************************
+
+Call for Papers
+As one of the most important international conferences sponsored by the TCDP of the IEEE Computer Society, the International Conference on Advanced Information Networking and Applications (AINA-2015) will be held in Gwangju, Korea, May 24-27, 2015. The conference covers theory, design and application of computer networks and distributed computing and information systems. Aside from the regular presentations, the conference will include keynote addresses with speakers from both industry and academia. Prospective authors are invited to submit papers in any of the following areas (not limited to):
+
+Communication Protocol and Architecture
+High-speed Communication and Network
+Wireless Communication and Network
+Multimedia Communication and System
+Personal Communication System
+Mobile Ad-hoc and Sensor Network
+Low-power Network and System
+Wearable Network and System
+Embedded System and Networking
+Internet Technology and IP-based Applications
+Network Control and Management
+Network Performance, Analysis and Evaluation
+Quality of Services (QoS)
+Multicast Routing and Technology
+Security, Privacy and Trust
+Fault-tolerant and Dependable System
+Multi-agent System and Applications
+Parallel/Distributed Algorithm and Architecture
+Distributed Database and Data Mining
+Distributed Graphics and VR/AR/MR System
+Distributed AI and Soft/Natural Computing
+Biological Informatics and Computing
+E-Learning, E-Commerce, E-Society, etc.
+Grid, Cluster and Internet Computing
+Peer-to-Peer (P2P) System
+Service-oriented Framework and Middleware
+Autonomic Computing and Communication
+WWW, Semantic Web and Cyber World
+Mobile and Context-aware Computing
+Ubiquitous/Pervasive Networks and Computing
+Ubiquitous Intelligence and Smart World
+Smart Object, Space/Environment and System
+Innovative Networking and Applications
+Social, Ethical & Other Issues of Networked World
+Network and Application Hardware
+Cognitive Network Access
+Digital Eco Systems
+
