@@ -91,35 +91,38 @@ The IDS in association with an IDS Transport Client (ITC) in the sink analyse th
 \label{sec:intro}
 Wireless Sensor Network (WSN) has been a hot research topic in recent time.
 It has attracted many researchers due to the significant advances in wireless and mobile communication technologies.
-The other driving forces behind the WSN are advancement in reliable hardware, flexibility in deployment and so on.
+Development of reliable hardware, ability to sense the physical, flexibility in deployment at scale are the main careers towards future smart environment.
 The wireless sensors, which are also called motes or nodes, are generally battery-powered, embedded devices with a onboard radio chip and several sensors.
 Sensors are deployed in the environment with a view to sensing certain physical phenomena, on which basic processing is performed at the individual motes.
 The processed information is sent to the destination using a multi-hop relay mechanism for further processing.
 The manager node, which is also called the sink or base station, generally has long lasting power and is usually connected to a system with greater processing capability.
-MOtes operating within range and sharing same protocols and radio channel form an autonomous network called a WSN.
+Motes operating within range, sharing same protocols and radio channel form autonomous network called WSN.
 A WSN does not have routers or gateways or routing tables.
 It transports information using a neighbourhood discovery process.
 
-Motes are generally deployed in a large number for long term in uncontrolled environment, which is difficult to manage.
-Once deployed, the sensors usually require reprogramming to accommodate bug-fixes, changes in sensing application or scientific requirements or alteration in the environment.
+Motes are generally deployed in a large number in uncontrolled environment, which is difficult to manage.
+They are intended for long term unattended use.
+Once deployed, the applications in the sensors usually require updating to accommodate bug-fixes, changes in sensing application or scientific requirements or alteration in the environment.
 Network code propagation using over the air (OTA) data dissemination protocols provide solution to this problem.
 
 There are several protocols like Trickle, MNP, ReMo, Deluge to name a few, which deal with OTA reprogramming.
-While few of these protocols allow updating subset of nodes in the WSN, thereby facilitate preferential treatment of different task at different regions of the same WSN, most of the protocols update the  whole network at one go resulting into all nodes in the WSN running same updated version of the software.
+Some of these protocols allow updating a subset of nodes in the WSN, thereby facilitate preferential treatment at different subregions of the same WSN.
+Most of the protocols update the  whole network at one go resulting into all nodes in the WSN running same updated version of the software.
 Deluge is an efficient and reliable protocol that allows OTA propagation of program binaries to all nodes in the WSN.
-It addresses several network programming issues e.g., deals with program objects that can be larger than the sensor memory, works in environments with high packet loss rate, variable node density and asymmetric links. [CITE 48].
+It addresses several network programming issues e.g., deals with program objects that can be larger than the sensor memory, works in environments with high packet loss rate, variable node density and asymmetric links \cite{1031506}.
 It also ensures quick propagation of program codes with minimum service interruption, which make it an elegant protocol of choice for  WSN reprogramming to many researches and professionals.
 Deluge is an interesting protocol to investigate any phenomena related to OTA reprogramming.
 
-Security is an important aspect of WSN development.
-Implementation of security techniques in WSN are critical and challenging because of constrained resources in the sensor.
-The capability of digital computing devices that can be employed to computationally compromise security of sensors grows at an enormous pace in comparison to that of sensors.
-Reliability and safety critics and academics have continually pointed out that security issues in WSN have not been sufficiently addressed, and WSN is not yet secure enough for mission critical deployment.
-WSNs have special vulnerabilities that do not exist in wired networks.
+Security is considered an important aspect of WSN development due to the fact that  security threats to WSN are different in nature from the Internet and ad-hoc network.
+Unattended large-scale deployment makes WSN an easy target to intrude upon.
+Besides that, implementation of security techniques in WSN are critical and challenging because of constrained resources in the sensor.
+Moreover, the capability of digital computing devices that can be employed to computationally compromise security of sensors grows at an enormous pace in comparison to that of sensors.
+In addition to that, WSNs have special vulnerabilities that do not exist in wired networks.
 Wireless channels are inherently considered less secure.
-Secure techniques like WPS, PKM and likewise cannot be employed in WSN because of energy, memory and computing resource constraints. %WPS - WiFi Protected Setup and PKM - Privacy and Key Management for WiMAX
+Well developed secure mechanisms like WPS, PKM and likewise are inappropriate in WSN. %WPS - WiFi Protected Setup and PKM - Privacy and Key Management for WiMAX
 As a result, WSNs are more vulnerable to intrusion attempts and security threats from malicious attackers.
 Beside physical attack on sensors, an attacker may also target wireless channels, network visibility, neighbourhood discovery process, even the software update process itself and so on.
+Reliability and safety critics and academics have continually pointed out that security issues in WSN have not been sufficiently addressed, and WSN is not yet secure enough for mission critical deployment.
 
 %\subsection{Why WSN communication in robotics/any application need to be secured. }
 %If inputs from wireless sensors are forged, then catastrophic errorneous results are expected			
@@ -127,20 +130,20 @@ Beside physical attack on sensors, an attacker may also target wireless channels
 
 
 %\subsection{How do I plan to handle them (How do I do it). > Contributions} \\
-An IDS does not prevent the break-in, but it can detect  break-in events but can raise alert following some predefined procedures in case of a security breach.
+In contrast to the odds described above, relatively simple communication protocols and design of WSN make it easy to perform intrusion detection in them \cite{quing09}.
+An Intrusion Detection System (IDS) does not prevent the break-in, but it can detect  break-in events but can raise alert following some predefined procedures in case of a security breach.
 Sometimes, it may be able to report the location where the break-in event has taken place, and even the extent of break-in as well.
 %Research in WSN security with respect to IDS has lots of potentials for new discovery and implementation. \empty{empty sentence}
-We propose an algorithm, which is essentially a centralised IDS that prevents the intrusion in software update.
+We propose an algorithm, which considers a centralised to detect  the intrusion in software update.
 The algorithm suggests a minor modification of the OTA update protocol to send back a datagram e.g, an Active Message (AM) packet containing the update time.
-AM is a single-hop, unreliable packet which are used to provide synchronous acknowledgements in TinyOS. %%It has a destination address, a type field, and a
+AM is a single-hop, unreliable packet which are used to provide synchronous acknowledgements in TinyOS \cite{tep116}. %%It has a destination address, a type field, and a
 %They are used to provide synchronous acknowledgements~\cite{tep116}.
-
 %a message indicating update time.  %by incorporating Active Message (AM). 
 %Specifically a TinyOS Active Message (AM) is used to acieve this. Such messages 
 %AM is a single-hop, unreliable packet used for network abstraction in TinyOS. 
 %It has a destination address, a type field, and are used to provide synchronous acknowledgements~\cite{tep116}.\notedme{The AM text still strikes me as weird. I've tried to rewrite it a bit. In a computer OS, if you wanted to say you sent back a datagram containing the update time, that's just what you'd say. It makes Active Messages sound like something special, when you haven't presented anything that's special about them. It's also not clear whether you're talking about the AM facility itself, or the data contained with the particular AM you send.} 
 %<Ashraf>> I specified about AM because it is already an implemented datagram technique, which is handled by OS. One does not have to think about reimplemeting it, which need s special handling in different layers.
-The information carried by datagram equips the IDS with a centralised view of a network-wide knowledge that is processed and analysed to work out a  `Surprise Score' or `Intrusion Warning Score' (IWS) to indicate a possible intrusion.
+The information carried by datagram enables the IDS with a centralised view of a network-wide knowledge that is processed and analysed to work out a  `Surprise Score' or `Intrusion Warning Score' (IWS) to indicate a possible intrusion.
 This work's contributions are two fold: 
 \begin{inparaenum}
 \item  The IDS identifies anomalies in software update patterns and scores them quantitatively;
@@ -166,49 +169,54 @@ Finally, we conclude our arguments in Section~\ref{sec:concl}.
 %Data dessemination protocols
 %Design of these networks to ensure the protection of data faces the constraints of limited power and processing resources. [REFERENCE: An Outline of Security in Wireless Sensor Networks: Threats, Countermeasures and Implementations]
 
-The following section describes the background and motivation of the study, including how it relates to earlier research that has been done in the field.
+The following section describes the background and motivation of the study, including how it relates to earlier research that has been performed in the field.
 
 
 %% <Ashraf>> I am importing the rest portion from ICARA menuscript with comments from dme 
 Software update process using Deluge or other OTA protocols is specifically vulnerable and a lucrative attack target because of several reasons.
-It implies effects beyond the updates only.
-They generally do not cater cryptographic protection for source authentication, integrity verification and likewise. 
+First, the ability to infect a software update process implies effects beyond the updates only.
+Secondly, most of the the OTA update protocols generally do not cater enough cryptographic protection for source authentication, integrity verification and likewise. 
 The program binary authentication technique using a hash is not very useful in to resource-constrained sensors. 
 Deluge incorporates digitally signed initial advertisement  and authenticated broadcast scheme. 
-However, we contend that it is possible for a malicious intruder to replicate an authentic image source and advertise new program version which the motes cannot repudiate. 
+However, a malicious intruder can be capable of replicating an authentic image source and advertise new program version which the motes cannot repudiate. 
 %\notedme{This needs to be explained. It isn't convincing at the moment IMO.} %%<Ashraf>>>Tried to address
-Even though,  Deluge incorporates on-chip hardware based encryption, Cryptography alone cannot completely prevent attacks. %on WSNs confidentiality, authenticity, availability due to resource limitation.
+Thirdly, even though,  Deluge incorporates on-chip hardware based encryption, cryptography alone cannot completely prevent attacks. %on WSNs confidentiality, authenticity, availability due to resource limitation.
 Techniques of different types of attacks  on WSN have been described by \cite{DBLP:journals/corr/abs-1301-3022}.
 Countermeasure  against these attacks are computationally expansive/costly and energy hungry, which implies they cannot practically be employed in resource constrained sensors. 
-An attacker can extract valuable information about the network from a physically compromised node.
-He can utilise the knowledge to modify his code, even can replace the nodes with the illegitimate and malicious ones. %\cite{DBLP:journals/corr/abs-1301-3022}.
 Constrained computational capacity and resources make it possible to compromise the cryptographic measures incorporated in the implemented WSN OSs. \cite{aes2011}.  %\notedme{needs citation or other evidence.}
 %%%Because the CC2420 cannot begin encryption at a particular offset and needs to be written, read, and re-written, use of the AES-128 may be  inefficient and will certainly decrease throughput. \cite{tep126}
+Fourthly, an attacker can extract valuable information about the network from a physically compromised node.
+He can utilise the knowledge to modify his code, even can replace the nodes with the illegitimate and malicious ones, which can imitate a legal update process. %\cite{DBLP:journals/corr/abs-1301-3022}.
+Resource constraint, use of wireless medium, security-sensitive data, uncontrolled environment, distributed deployment and so on adds to the physical vulnerability of the sensors.
+Considering these reasons, some researchers strongly suggest complete redesign of security mechanism in WSN \cite{quing09}.
 
-During the software update process, the running OS need to reboot to switch to the new application. 
-In the process, security  measures on the sensor motes are deactivated or unavailable for a short period of time.
+Protecting the software update process is certainly of great importance.
+In case of failures, reporting an incident and identifying the extent of illegitimate software update is also equally important.
+During the software update process, the running OS need to reboot to the new application. 
+During this, security  measures on the sensor motes are deactivated or unavailable for a short period of time.
 Additionally, the update process across the whole WSN contributes to a significant increase in traffic that an adversary may exploit to  mask his actions. 
-An attacker can mask a legitimate update and inject his own program image to serve his intended purpose, which could range from stealing information or logging network events to denial of service. 
+An attacker can mask an illegitimate update and inject his own program image to serve his intended purpose.
+This enables an adversary to steal sensitive information, log network events, even complete denial of service. 
 %Researchers put lot of effort to study these attacks and to devise the methods to minimize their impact on the network.
-Therefore, protecting the update process or in case of failures identifying the incident and extent of illegitimate software update is of great importance.
 
-
-The other kind of vulnerability of such epidemic natured update protocol is breach at any one point does the job of weakening the whole network for the attacker. 
-This can result into complete compromising the operations and functions of the whole WSN.
+While the OTA update protocols are essential for the WSNs, they may act as suitable carriers of malicious code in the network.
+For example, Deluge achieves reliability using density aware epidemic property that works on a state machine principle and follows few local rules that ultimately achieves global behaviour \cite{1031506}.
+If follows the other kind of vulnerability, which is breach at any one point weakens the whole WSN. 
+This can result into complete compromising the operations and functions.
 An attacker may appear somewhere in the network, pretend to be an authentic source and disappear after successful introduction of the illegitimate image to one mote in the network. 
 The security mechanisms provided by Deluge would be unable to detect the initial breach in such cases and would allow the network to be flooded by a totally new version of the application that performs completely different function~\cite{Karlof:2004:TLL:1031495.1031515}.
-While the reprogramming protocols are essential for the WSNs, they could act as carriers of rapid spread of malicious code in the network.
+
 
 
 %\subsection{Why it is necessary to have IDS not encryption in case of WSN}
-Security schemes in WSNs have two main approaches --- using cryptography (crypto) to secure communication and  employing Intrusion Detection System (IDS) to oversee activities.
-Crypto techniques are active approaches through use of cryptographic keys, encryption and decryption schemes, algorithms, policies and procedures.
+Security schemes in WSNs have two main approaches -- using cryptography to secure communication and  employing Intrusion Detection System (IDS) to oversee activities.
+cryptographic techniques are active approaches through use of cryptographic keys, encryption and decryption schemes, algorithms, policies and procedures.
 Because  of the absence of the session and presentation layers, applying encoding sockets and end to end encryption is impossible.
-Designing crypto based security solutions in the lower layers for wireless sensors are complicated, expansive and often may not be effective.
+Designing cryptography based security solutions in the lower layers for wireless sensors are complicated, expansive and often may not be effective.
 %\notedme{needs evidence} %<Ashraf>>Are you asking about the absence of the layers
-An adversary can employ much greater computing resources to break in through the protection provided by crypto solutions.
+An adversary can employ cryptanalysis with much greater computing resources to break in through the WSN cryptographic protection.
 Moreover, absence of switches and gateways in WSN hampers monitoring of information flow.
-Thus it is useful to employ some passive security measures alongside crypto solution.
+Thus it is useful to employ some passive security measures, for example: an IDS.
 An IDS detects suspicious behaviour in the network, provides useful information like identification and location of the intruder, extent of intrusion and likewise.
 
 %\subsection{Lit Review}
@@ -263,19 +271,19 @@ The IDS identifies the anomaly in software update pattern in terms of quantitati
 %\notedme{What about the related work that talks about timing analysis?}
 %<Ashraf>> I cannot find another timing analysis approach. And no IDS specifically addresses software updates. I was trying to identify IDS that talk about the software update issue
 %The technique may further be extended for use with broad range of intrusion detection motives specially in WSN and also in MANET.
-While timing analysis technique is non-existent in the WSN, some of the IDSs use traffic analysis or packet inspection  techniques and process them in centralised or distributed fashion.
-It can be argued, traffic analysis approach is potentially same as timing analysis we have proposed.
-The argument can be quite intense because traffic analysis considers both throughput and latency , and latency essentially about timing.
-In response to this, we reply that latency considers the time interval i.e, time delay between a cause and the effect in the system being observed from a holistic view.
-In our case, we 
-<><><><><>I AM UPDATIING THIS PORTION HERE<><><><><><> aSHRAF
-0.	INDICATE WHAT IS THE DIFFERENCE [IN TREATMENT OF THE PROBLEM]
-1.  Specifically contrast timing approach against a latency measure within the best matched traffic analysis paper that you’ve found so far.    
-2.  they are motivated by the similar technicques in other wireless technologies.
-    i NEED TO support MY view HERE,
-3.  justify WHATS WRONG WITH  using techniques from other wireless tech,  is not best plan.
-4.  other issue is, no IDS specifically addresses software updates
-<><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+While timing analysis mechanism is non-existent in the WSN, some of the IDSs use traffic analysis or packet inspection  techniques.
+It can be argued, traffic analysis approach is potentially comparable to proposed timing analysis.
+The argument can be quite intense because traffic analysis considers both throughput and latency, and latency is essentially about timing.
+Onat and Miri presented an IDS approach which considers statistical treatment similar to the one we proposed, yet the techniques have subtle differences.
+The IDS deals with node impersonation and resource depletion attacks only.
+In this approach, each node build an expectation statistics of received packets based on the last N packets received from each neighbour.
+If packets received from any neighbour displays anomalous patterns after a predefined number of consecutive packets, intrusion alarms may be raised \cite{1512911}.
+Unfortunately, the  packet count statistics is not suitable in OTA software update scenario.
+There is a significant increase in traffic owing to software update process. 
+This outs the mechanism off balance.
+The other shortcoming of the technique is, certain rare yet critical activity, for example: a tsunami or earthquake, would raise false positive intrusion alarm.
+However, the mechanism of statistical treatment on information over a time period motivates us to employ timing analysis approach on a context of OTA update protocol.
+
 
 
 \section{Methodology}
@@ -296,10 +304,10 @@ This raw data is processed to determine an IWS.
 %\subsection*{Simulation Environment}
 %\label{subsec:sim_env}
 The IDS requires Deluge protocol to be able to report the time of executing  a new version of its software.
-The protocol was originally implemented in TinyOS and later has been ported to other embedded operating systems including Contiki\footnote{url{http://www.contiki-os.org}}. 
+The protocol was originally implemented in TinyOS and later has been ported to other embedded operating systems including Contiki\footnote{\url{http://www.contiki-os.org}}. 
 We used Deluge protocol implemented in Contiki v2.7 on a system running on Ubuntu 12.04.
 %[So this will eventually need citation and a self-contained description.]
-`Cooja'\footnote{https://github.com/contiki-os/contiki/wiki/An-Introduction-to-Cooja}, a network simulator for Contiki, was used to simulate the software update pattern associated with Deluge protocol.
+`Cooja'\footnote{\url{https://github.com/contiki-os/contiki/wiki/An-Introduction-to-Cooja}}, a network simulator for Contiki, was used to simulate the software update pattern associated with Deluge protocol.
 %\notedme{Best to give academic citations, or footnote URLs for these technologies.}
 %We also used a plugin for Contiki called Mobility to aid our experiential setup.
 %Although the plugin was designed to deal with positions over time for the nodes in the simulation, we used it to load the exact location of the sensor motes into the `Cooja' simulator. 
@@ -361,12 +369,12 @@ observe the difference from the parameter change.
 %\subsubsection*{Processing  of Individual Test Run}
 %\label{ssc:test_runs}
 %Step 1: Running simulation
-\paragraph*{Step 1:} In the environmental set up described above , all motes in the WSN were booted up at same time running one version of a diagnostic application. 
+\paragraph*{Step 1} In the environmental set up described above , all motes in the WSN were booted up at same time running one version of a diagnostic application. 
 The diagnostic application would necessarily report its time, version number and mote ID on the serial terminal every second at its serial port. 
 
 
 %Step 2: Stopping the simulation
-\paragraph*{Step 2:} The base station dynamically began the update process and propagated another version of the software (also called image) using Deluge protocol. %, which is also called 
+\paragraph*{Step 2} The base station dynamically began the update process and propagated another version of the software (also called image) using Deluge protocol. %, which is also called 
 Whenever new image transfer to a mote was complete, the image would replace its old version and reboot to begin executing the new one.
 The new application also necessarily allowed the motes to report their time, version number and mote ID on the serial terminal. 
 The simulator continued until all the motes in the WSN were updated and the reported events were logged. 
@@ -387,7 +395,7 @@ The update time of each mote were filtered out  and were sorted In ascending ord
 %Step 5: Calculating baseline data
 %\subsubsection*{Building the Baseline Data}
 %\label{ssc:build_baseline}
-\paragraph*{Step 3:} Processed data from 20 simulations, initiated from the sink, were considered for each topology.
+\paragraph*{Step 3} Processed data from 20 simulations, initiated from the sink, were considered for each topology.
 Any change in variables in the environment or in the topology would necessitate recalibrating the baseline.
 Mean and standard deviation of mote update times, generally in seconds, were statistically calculated to build the baseline.
 These were the inputs to the IDS to calculate the IWS according to the utility function shown in Equation~\ref{eqn2}. 
@@ -396,7 +404,7 @@ These were the inputs to the IDS to calculate the IWS according to the utility f
 %\subsubsection*{Calculating IWS}
 %\label{ssc:calc_iws}
 
-\paragraph*{Step 4:} Intrusion attacks at different nodes were replicated in simulations.
+\paragraph*{Step 4} Intrusion attacks at different nodes were replicated in simulations.
 The individual simulations runs were treated in a fashion  similar to~\ref{ssc:test_runs}.
 The update time recorded at each of the motes were mathematically treated according to the utility function in Equation~\ref{eqn2}, which performed the following computations:
 \begin{itemize}
@@ -510,15 +518,15 @@ The timing information carried by the datagram is therefore synchronised with ot
     \caption{IDS Framework}
     \label{fig:ids_fw}
 \end{figure}
-The IDS framework components has been shown in \ref{fig:ids_fw}.
-The IDS has three kinds of components:
+The IDS framework components and chronology of the activities associated with the IDS has been shown in Figure~\ref{fig:ids_fw}.
+The IDS has three types of components:
 \begin{inparaenum}
 \item the motes in the WSN that are subject to legitimate or illegitimate update; 
 \item an IDS transport client (ITC) application that runs on the sink and works in coordination with the IDS to assists in intrusion detection; and
 %The sink is protected from all kinds of security breaches whether it is physical or logical. 
 \item an IDS application that runs on a system with higher computing resources which is physically attached to the sink, and houses a network database (NDB).
 \end{inparaenum}
-The chronology of the activities associated with the IDS  are shown in  \ref{fig:ids_fw}.
+
 %%% <ashraf> strike out
 %\begin{inparaenum}
 %\item Updates are initiated using Deluge protocol;
@@ -874,7 +882,7 @@ However, for the distant motes, the IWS is quite high and the IDS can conclude s
 
 While reporting severity or likelihood of an intrusion in quantitative term like the IWS is useful, it is more beneficial if the quantity is associated with some kind of interpretation.
 The technique of associating such interpretation has been discussed in Section~\ref{ssc:iw_zone} and in this Section. 
-In the elliptical topology intrusion scenario, maximum IWS reported in the presented data in Table~\ref{tab:iws_ellip} was 535. 
+In the elliptical topology intrusion scenario, maximum IWS reported in the presented data in Figure~\ref{subfig:ellipgraph} was 535. 
 Motes reporting 10\% of maximum IWS i.e., an IWS up to 53.5 would be considered in the GREEN zone.
 %\notedme(1){Why is this the IWS value for green? You've not explained.}
 %% <Ashraf> addressed
