@@ -74,13 +74,10 @@ When Deluge modifies the running software in a mote, the mote sends related  inf
 The IDS in association with an IDS Transport Client (ITC) in the sink analyse the update phenomena and computes a `Intrusion Warning Score' (IWS) using an algorithmic function to indicate a possible intrusion i.e., a probable illegitimate update.
 \end{abstract}
 
-%\begin{keyword}
-%\kwd{Wireless Sensonrs}
-%\kwd{WSN}
-%\kwd{Intrusion Detection System}
-%\kwd{Security}
-%\kmw{Intrusion}
-%\end{keyword}
+% Note that keywords are not normally used for peerreview papers.
+%\begin{IEEEkeywords}
+%Wireless Sensors, WSN, Intrusion Detection System, Security, Intrusion
+%\end{IEEEkeywords}
 
 % no keywords
 % For peer review papers, you can put extra information on the cover
@@ -114,8 +111,8 @@ Once deployed, the applications in the sensors usually require updating to accom
 Network code propagation using over the air (OTA) data dissemination protocols provide solution to this problem.
 %\marginnote{Use of OTA Protocol}[2cm]
 
-There are several protocols like Trickle, MNP, ReMo, Deluge to name a few, which deal with OTA software update.
-Some of these protocols allow updating a subset of nodes in the WSN, thereby facilitate preferential treatment at different subregions of the same WSN.
+Protocols like Trickle, MNP, ReMo, Deluge and so on deal with OTA software update.
+Few protocols facilitate preferential treatment at different subregions of the same WSN by allowing to update a subset of nodes.
 Most of the protocols update the  whole network at one go resulting into all nodes in the WSN running same updated version of the software.
 For example, Deluge is an efficient and reliable protocol that allows OTA propagation of program binaries to all nodes in the WSN.
 It addresses several network programming issues e.g., deals with program objects that can be larger than the sensor memory, works in environments with high packet loss rate, variable node density and asymmetric links \cite{1031506}.
@@ -270,7 +267,7 @@ The WSN OSs do not incorporate an IDS approach due to the reality that deploying
 An IDS residing on the sensors ideally should be avoided by design.
 %\marginnote{IDS desing issue}[2cm]
 
-The absence of a passive approach to watch over the security breach of the software update leaves an easy backdoor  to intrude upon.
+The absence of a passive approach to watch over the security breach of the software update leaves an easy back door  to intrude upon.
 It is a threat to achieving authentication and integrity of information, maintaining confidentiality of the purposes for which WSN can be used.
 Hence, we propose an analytical tool that is passive in nature and can provide valuable insight into the propagation characteristics of OTA reprogramming protocol. 
 %\notedme{Although you need to contrast what you lose by not having it within the WSN.}
@@ -400,10 +397,10 @@ It determines the changes in the statistics of the update time and calculates IW
 \end{equation}
 where, 
 \begin{inparaenum}
-\item $\mathit{i}$---mote index;%\notedme{Why were you using capital letters all through here?}
-\item $\mathit{t_i}$---image update time at mote $\mathit{i}$; 
-\item $\mathit{\mu_i}$---mean update time at mote $\mathit{i}$; 
-\item $\mathit{\sigma_i}$---standard deviation of update time at mote $\mathit{i}$.
+\item $\mathit{i}$---mote index;%\notedme{Why were you using capital letters all through here?} 
+\item $\mathit{t_i}$---image update time at mote $\mathit{i}$;  
+\item $\mathit{\mu_i}$---mean update time at mote $\mathit{i}$;  
+\item $\mathit{\sigma_i}$---standard deviation of update time at mote $\mathit{i}$. 
 \end{inparaenum}	
 
 \subsubsection*{Building Intrusion Warning Zone}
@@ -609,8 +606,8 @@ Intrusion attacks at different nodes were replicated in simulations.
 The individual simulations runs were treated in a fashion  similar to~Step 1 and Step 2.
 The update time recorded at each of the motes were mathematically treated according to the utility function in Equation~\ref{eqn2}, which performed the following computations:
 \begin{itemize}
-\item Subtract the new update time from the corresponding mean of reference update time for each of the motes to calculate the absolute difference. For example, new update time of updated mote `$m$'(new) is subtracted from mean update time found from the baseline data for mote `$m$' and its absolute value was calculated.
-\item The absolute difference is divided by a function of standard deviation to avoid the possibility of division by zero situation. 
+\item Subtract new update time from corresponding mean of reference update time for each of the motes to calculate the absolute difference. For example, new update time of mote `$m$' is subtracted from mean update time found from the baseline data for mote `$m$' and its absolute value was calculated.
+\item Absolute value is divided by a function of standard deviation to avoid division by zero situation. 
 This is the intrusion score for individual node `$m$'.
 %This also smooths the data to avoid unrelated variations.\notedme{what's an unrelated variation?}
 \item Sum up the resulting intrusion scores at all individual nodes in the WSN to find out the total IWS for the update.
@@ -889,30 +886,43 @@ A unusual update time chronology and resulting unusual IWS  indicates the probab
 \section{Conclusion}
 \label{sec:concl}
 
-The concept of zoning using the IDS is a very useful tool in designing secure WSN deployment.
+In this paper, we modelled an IDS solution to intrusion in WSN software update protocol.
+We discussed the potential danger that is associated with WSN OTA software update protocol.
+While OTA update protocols make certain WSN management tasks easy, they also remain vulnerable to intrusion attempts from adversary who is expected to hit at the time of need.
+Because of the resource constrained nature of the sensor motes, an adversary can employ enough resources to break in through the limited protection the sensors are armed with.
+To deal with this problem, we have suggested a passive security mechanism, an IDS that is designed to deal with intrusion attempt related with the IDS.
 
-%<Ashraf>> I am rewriting this part. ;)
-<><><><><>I AM UPDATIING THIS SECTION HERE<><><><><><> aSHRAF
-<><><><><><><><><><><><><><><><><><><><><><><><><><><><>
-%Cases that it cannot handle. 
-The IDS cannot identify an intrusion in certain scenarios.
-For example, when an intrusion takes place in close vicinity of the sink, this IWS may not always be significantly large to be identified as an intrusion. 
-%Moreover, due to node compromise in one of the motes and intrusion initiated from another mote may result into unsurprising score due to fact that the effects may cancel each others contribution to the score.
-The deployment should consider additional security measures to handle such scenarios.
+The IDS is hosted on a server system that remains physically connected to the  sink. 
+The sink has an ITC application which in coordination with the IDS performs the detection activity.
+The system watches over the software update pattern using a modified version of Deluge protocol.
+Whenever a mote is updated, it sends an update related information to designated sink using a datagram.  
+Related information from the datagram is filtered by the ITC for further processing at IDS.
 
+The IDS analyses all collected timing information and computes an IWS and indicates the location and extent of intrusion.
+The IWS is a quantitative indicator of possible intrusion.
 The utility function presented in Equation~\ref{eqn2} is designed to neutralise the undesired %/unexpected
 changes in mean and standard deviation which are expected to contribute to a near zero IWS.
-%\notedme(1){zero is just an English word. Why are you typesetting it differently? NB: if you were to typeset it in maths, this is not the correct way to do so: \LaTeX doesn't know that you mean zero to be a word, and thus will instead typeset it as a product of individual variables z, e, r, o, ...}
-%% <Ashraf> Addressed 
-A near zero IWS is further classified as GREEN zone to indicate a legitimate software update. 
 
 
-\notedme{This should be in a conclusion section. How many papers have you read that don't have one?}
-In this paper, we have modelled a IDS solution to one of the weaknesses in WSN that can be capitalised by an adversary to invalidate a mission critical deployment of the technology in robotics.\notedme{rewrite---unclear}
-The proposed system watches over the software update pattern for over the air update protocol in WSN, computer an IWS that can quantitatively indicate a possible intrusion.\notedme{also unclear}
-In addition to this, the IDS environment can be used to design a secure WSN deployment.
-The IDS also can indicate some other kinds of anomalies such as node relocation, node repudiation, node compromise and so on.
-In future,  the IDS can be implemented to examine testbed performance including cases of multiple sink with mobile sensors which would be very useful in robotics applications.\notedme{testbed performance? Don't understand. The conclusion needs to be much more clearly written: some reviewers might stop reading at this point if they don't understand your contributions (i.e. they'll read the conclusion first, before even looking at the paper!).}
+The concept of zoning using the IDS is a very useful tool in designing secure WSN deployment.
+The IDS can be used to simulate all possible sets of parameters.
+The IDS can rank the sets based on intrusion vulnerability.
+For example, a WSN with known small insecure zone is much easier to protect than a larger zone.
+The IDS ranking useful in such scenario.
+Besides, the IDS also can indicate some other kinds of anomalies such as node relocation, node repudiation, node compromise and so on.
+
+The IDS has several limitations. 
+It assumes some special cases like the WSN being single sink, static in nature.
+It also assumes to have network wide transparent knowledge.
+These assumptions may not hold in real WSN.
+In addition to this, assumption about the attacker are: he can employ enough resources to break the cryptographic security in sensors.
+However, he is not able to modify the protocols in an uncompromised sensor.
+
+The IDs has an obvious functional limitation.
+The IDS cannot identify an intrusion in certain scenarios.
+For example, when an intrusion takes place in close vicinity of the sink, this IWS may not always be significantly large to be identified as an intrusion. 
+
+In future,  the IDS can be implemented to examine real world performance including cases of multiple sink with mobile sensors.
 
 
 
