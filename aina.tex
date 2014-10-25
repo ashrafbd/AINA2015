@@ -95,25 +95,27 @@ The IDS, in association with an IDS Transport Client (ITC) in the sink, analyses
 
 \section{Introduction}
 \label{sec:intro}
-Wireless Sensor Network (WSN) has been a hot research topic in recent time.
-It has attracted many researchers due to the significant advances in wireless and mobile communication technologies.
+Wireless Sensor Networks (WSN) have seen much recent research.
+They has attracted many researchers due to the significant advances in wireless and mobile communication technologies.
+% <dme> such as?
 The wireless sensors, which are also called motes or nodes, are generally battery-powered, embedded devices with a onboard radio chip and several sensors.
 Sensors are deployed in the environment with a view to sensing certain physical phenomena, on which basic processing is performed at the individual motes.
 The processed information is sent to the destination using a multi-hop relay mechanism for further processing.
-The manager node, which is also called the sink or base station, generally has long lasting power and is usually connected to a system with greater processing capability.
-Motes operating within range, sharing same protocols and radio channel form autonomous network called WSN.
+The manager node, which is also called the sink or base station, generally has long-lasting power and is usually connected to a system with greater processing capability.
+Motes operating within range, sharing the same protocols and radio channel form an autonomous network called a WSN.
 A WSN does not have routers or gateways or routing tables.
+% <dme> the sink is often thought of as a gateway AFAIUI, so the above sentence is potentially confusing.
 It transports information using neighbourhood discovery process.
 %\marginnote{Define mote, sink, WSN}[2cm]
 
-Motes are generally deployed in a large number in uncontrolled environment, which is difficult to manage.
-They are intended for long term unattended use.
-Once deployed, the applications in the sensors usually require updating to accommodate bug-fixes, changes in sensing application or scientific requirements or alteration in the environment.
-Network code propagation using over the air (OTA) data dissemination protocols provide solution to this problem.
+Motes are generally deployed in a large number in uncontrolled environments, which makes them difficult to manage.
+They are intended for long-term unattended use.
+Once deployed, the applications in the sensors usually requires updating to accommodate bug-fixes, changes in sensing application or scientific requirements or alteration in the environment.
+Network code propagation using over the air (OTA) data dissemination protocols provides a solution to this problem.
 %\marginnote{Use of OTA Protocol}[2cm]
 
 Protocols like Trickle, MNP, ReMo, Deluge and so on deal with OTA software update.
-Few protocols facilitate preferential treatment at different subregions of the same WSN by allowing to update a subset of nodes.
+A few of the protocols facilitate preferential treatment at different subregions of the same WSN by allowing updating of a subset of nodes.
 Most of the protocols update the  whole network at one go resulting into all nodes in the WSN running same updated version of the software.
 For example, Deluge is an efficient and reliable protocol that allows OTA propagation of program binaries to all nodes in the WSN.
 It addresses several network programming issues e.g., deals with program objects that can be larger than the sensor memory, works in environments with high packet loss rate, variable node density and asymmetric links \cite{1031506}.
@@ -121,16 +123,18 @@ It also ensures quick propagation of program codes with minimum service interrup
 Deluge is an interesting protocol to investigate any phenomena related to OTA reprogramming.
 %\marginnote{OTA protocols -> Deluge}[2cm]
 
-Security is considered an important aspect of WSN development due to the fact that  security threats to WSN are different in nature from the Internet and ad-hoc network.
-Unattended large-scale deployment makes WSN an easy target to intrude upon.
+Security is considered an important aspect of WSN development due to the fact that  security threats to the WSN are different in nature from those faced when using Internet technology. % and ad-hoc network.
+Unattended large-scale deployment makes WSNs an easy target to intrude upon.
 Besides that, implementation of security techniques in WSN are critical and challenging because of constrained resources in the sensor.
-Moreover, the capability of digital computing devices that can be employed to computationally compromise security of sensors grows at an enormous pace in comparison to that of sensors.
+Moreover, the capability of digital computing devices that can be employed to computationally compromise the security of sensors grows at an enormous pace in comparison to that of sensors.
+% <dme> OK, but the sensors are gaining capabilities too...
 In addition to that, WSNs have special vulnerabilities that do not exist in wired networks.
 Wireless channels are inherently considered to be less secure.
-Well developed secure mechanisms like WPS, PKM and likewise are inappropriate in WSN. %WPS - WiFi Protected Setup and PKM - Privacy and Key Management for WiMAX
+Well developed secure mechanisms like WPS, PKM and likewise are inappropriate in WSNs. %WPS - WiFi Protected Setup and PKM - Privacy and Key Management for WiMAX
+% <dme> you haven't said why they're inappropriate.
 As a result, WSNs are more vulnerable to intrusion attempts and security threats from malicious attackers.
-Besides physical attack on sensors, an attacker may also target wireless channels, network visibility, neighbourhood discovery process, even the software update process itself and so on.
-Reliability and safety critics and academics have continually pointed out that security issues in WSN have not been sufficiently addressed, and WSN is not yet secure enough for mission critical deployment.
+Besides physical attack on sensors, an attacker may also target wireless channels, network visibility, neighbourhood discovery process, and even the software update process itself.
+Reliability and safety critics, and other researchers, have frequently pointed out that security issues in WSNs have not been sufficiently addressed, and that WSNs are not yet secure enough for deployment within mission critical applications.
 %\marginnote{Security threats in WSN and reasond. Problem definition}[2cm]
 
 %\subsection{Why WSN communication in robotics/any application need to be secured. }
@@ -139,12 +143,12 @@ Reliability and safety critics and academics have continually pointed out that s
 
 
 %\subsection{How do I plan to handle them (How do I do it). > Contributions} \\
-In contrast to the odds described above, relatively simple communication protocols and design of WSN make it easy to perform intrusion detection in them \cite{quing09}.
-An Intrusion Detection System (IDS) does not prevent the break-in, but it can detect  break-in events, raise alert following some predefined procedures in case of a security breach.
+In contrast to the problems described above, relatively simple communication protocols and the design of WSNs makes it easy to perform intrusion detection in them~\cite{quing09}.
+An Intrusion Detection System (IDS) does not prevent the break-in, but it can detect  break-in events, and raise an alert following some predefined procedures in the case of a security breach.
 Sometimes, it may be able to report the location and extent of break-in as well.
 %Research in WSN security with respect to IDS has lots of potentials for new discovery and implementation. \empty{empty sentence}
 In this paper we present an algorithm, which considers a centralised approach to detect  the intrusion in case of WSN software update.
-The algorithm suggests a minor modification of the OTA update protocol to send back a datagram e.g., an Active Message (AM) packet containing the update time.
+The algorithm requires a minor modification of the OTA update protocol to send back a datagram e.g., an Active Message (AM) packet containing the update time.
 AM is a single-hop, unreliable packet which are used to provide synchronous acknowledgements in TinyOS \cite{tep116}. %%It has a destination address, a type field, and a
 %They are used to provide synchronous acknowledgements~\cite{tep116}.
 %a message indicating update time.  %by incorporating Active Message (AM). 
@@ -156,7 +160,7 @@ The information carried by the datagram enables the IDS with a centralised view 
 This work's contributions are two fold: 
 \begin{inparaenum}
 \item  The IDS identifies anomalies in software update patterns and scores them quantitatively;
-\item It is demonstrated that simulation can indicate the positions of WSN nodes that will best support the ability of the IDS to detect anomalies.
+\item It is demonstrated that simulation can indicate the positions of WSN nodes that will best support the ability of similar IDSs to detect anomalies.
 %scheme i.e., the IDS expectations can provide useful insight for designing secure WSN.
 \end{inparaenum}
 %% <Ashraf> is this paragraph a repeatation of the previous one. But there are some useful info here
@@ -165,7 +169,7 @@ This work's contributions are two fold:
 %\subsection{Organisation of the paper }
 The rest of this paper is structured in the following way. 
 In Section~\ref{sec:lit}, we provide an overview of our findings from intrusion related research works in WSN. 
-We look up for  software update security aspects not addressed by the present WSN security researchers and the reasons behind. 
+We seek software update security aspects not addressed by the present WSN security research and the reasons behind this. 
 In Section~\ref{sec:meth}, we describe a brief overview of the system  design and the experiment methodology. 
 Then we  present the findings from the experiments, analyse the result and present our evaluation in Section~\ref{sec:eval}.  
 Finally, we conclude our arguments in Section~\ref{sec:concl}.
