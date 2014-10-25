@@ -1,5 +1,5 @@
 %\documentclass[conference,draftcls]{IEEEtran}
-\documentclass[conference,final]{IEEEtran}
+\documentclass[conference]{IEEEtran}
 
 \usepackage{setspace}
 %\doublespacing
@@ -46,7 +46,7 @@
 
 
 \begin{document}
-\title{Intrusion Detection of a Wireless Sensor Network\\Over the Air Update Protocol}
+\title{Intrusion Detection within a Wireless Sensor Network Over the Air Update Protocol}
 %The conference covers theory, design and application of computer networks and distributed computing and information systems
 \author{
 %	\IEEEauthorblockN{	A S M Ashraful Alam\IEEEauthorrefmark{1},  % and
@@ -67,11 +67,12 @@
 
 
 \begin{abstract}
-Security in Wireless Sensor Network (WSN) is a challenging research area.
-In this paper, an Intrusion Detection System (IDS) for WSN  software update protocol is modelled and simulated. 
+Security in Wireless Sensor Networks (WSN) is a challenging research area.
+In this paper, an Intrusion Detection System (IDS) for a WSN software update protocol is modelled and simulated. 
 The Intrusion Detection System (IDS) observes update behaviour effected by the Deluge protocol.
-When Deluge modifies the running software in a mote, the mote sends related  information to the sink. 
-The IDS in association with an IDS Transport Client (ITC) in the sink analyse the update phenomena and computes a `Intrusion Warning Score' (IWS) using an algorithmic function to indicate a possible intrusion i.e., a probable illegitimate update.
+When Deluge modifies the running software in a mote, the mote sends related information to the sink. 
+% <dme> I don't think the above is correct if using the omniscience approach that only works in the simulator
+The IDS, in association with an IDS Transport Client (ITC) in the sink, analyses the update process and computes an `Intrusion Warning Score' (IWS) to indicate a possible intrusion i.e., a probable illegitimate software update.
 \end{abstract}
 
 % Note that keywords are not normally used for peerreview papers.
