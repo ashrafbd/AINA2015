@@ -307,14 +307,15 @@ This puts the mechanism off balance.
 The other shortcoming of the technique is, certain rare yet critical activities, for example: a tsunami or earthquake, would raise false positive intrusion alarm.
 However, the mechanism of statistical treatment on information over a time period motivates us to employ timing analysis approach on the context of OTA update protocol.
 %\marginnote{Comparison with previous works. Motivation}[2cm]
-
+% <dme> I'm not convinced by the above arguments.
 
 \section{Methodology}
 \label{sec:meth}
-In this section, we provide a brief overview of the system design and describe the study environment and procedures.
-The original system design is quite elaborate, but details have been left out to accommodate the space limitation.
+In this section, we provide a brief overview of the system design and describe the evaluation environment. % and procedures.
+%The original system design is quite elaborate, but details have been left out to accommodate the space limitation.
+% <dme> I don't understand why you think it's elaborate. It's actually really simple!
 %It's helpful to both writer and reader to organize this section chronologically: that is, describe each procedure in the order it was performed. For example, DNA-extraction, purification, amplification, assay, detection. Or, study area, study population, sampling technique, variables studied, analysis method.
-The proposed IDS and its techniques were evaluated using a set of simulations. %in comprehensive simulations.
+The proposed IDS will be evaluated using a set of simulations. %in comprehensive simulations.
 %While the system has been elaborately designed and aimed at testbed evaluation, it has not yet been performed at this stage of the research. 
 %\notedme{Dropped sentence here. What does ``aimed at testbed evaluation'' mean?}
 % <Ashraf>> I meant evaluation using a testbed implementation
@@ -770,16 +771,14 @@ It also indicates the threshold among the GREEN, GREY and RED zones discussed ab
 \centering
 \begin{tabular}{|l|*{20}{r|}r|}
 \hline
-\bd{Node ID}           & \bd{1} & \bd{2} & \bd{3} & \bd{4} & \bd{5} & \bd{6} & \bd{7} & \bd{8} & \bd{9} & \bd{10} & \bd{11} & \bd{...} & \bd{31} & \bd{32} & \bd{33} & \bd{34} & \bd{35} & \bd{36} & \bd{37} & \bd{38} \\
+\bd{Node ID}           & \bd{1} & \bd{2} & \bd{3} & \bd{4} & \bd{5} & \bd{6} & \bd{7} & \bd{8} & \bd{9} & \bd{10} & \bd{11} & \bd{...} & \bd{33} & \bd{34} & \bd{35} & \bd{36} & \bd{37} & \bd{38} \\
 %Mote ID           & 1 & 2 & 3 & 4 & 5  & 6 & 7 & 8 & 9 & 10 & 11 & ...& 31 & 32 & 33  & 34 & 35 & 36 & 37 & 38 \\
 \hline		\hline
 
-Power	  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &   &  &  &  &  &  \\
-$100\% $          & 512 & 529 & 512 & 512 & 512  & 512 & 476 & 478 & 476 & 459 & 458 & ...& 49 & 47 & 53  & 48 & 49 & 51 & 47 & 29 \\
+Power 100\%	   & 512 & 529 & 512 & 512 & 512  & 512 & 476 & 478 & 476 & 459 & 458 & ...& 53  & 48 & 49 & 51 & 47 & 29 \\
 \hline
 
-Power	  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &   &  &  &  &  &  \\
-$50\%$            &31 & 59&254& 31& 31 &283& 32& 32& 254& 31 &253 & ...& 31 & 31 & 31  & 30 & 31 & 31 & 30 & 0 \\
+Power 50\%	  &31 & 59&254& 31& 31 &283& 32& 32& 254& 31 &253 & ... & 31  & 30 & 31 & 31 & 30 & 0 \\
 \hline
 \end{tabular}
 \caption{IWS from intrusion at motes in `Owheo Sensor Network'. Further explained in Figure~\ref{fig:owheo}}
