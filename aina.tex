@@ -499,22 +499,23 @@ The system do not consider mote mobility scenario and assumes a static WSN.
 
 \subsection*{Experiment Settings}
 \label{subsec:sim_env}
-\begin{table*}[t!]
-\centering
-%\notedme{why is this table interesting or significant?}
-%<Ashraf>> This is the result that I've presented
-%\begin{tabular}{|l|*{8}{r|}r|}
-\begin{tabular}{|p{2.5cm}|c |c |c |c |c |c |c |c |}
-\hline
-\bd{Topologies}           & \bd{Linear} & \bd{Circular} & \bd{Elliptical} & \bd{Double Rings} & \bd{Wide Line} & \bd{Grid} & \bd{Tree} & \bd{Owheo WSN}   \\
-\hline
-\bd{Number of Motes}           & 20 & 20 & 20 & 46 & 45 & 72 & 25 & 37   \\
-% \bd{of Motes}           &  &  &  &  &  &  &  &    \\
-\hline
-\end{tabular}
-\caption{Number of motes used in each topological deployment}
-\label{tab:topos}
-\end{table*}
+
+% \begin{table*}[t!]
+% \centering
+% %\notedme{why is this table interesting or significant?}
+% %<Ashraf>> This is the result that I've presented
+% %\begin{tabular}{|l|*{8}{r|}r|}
+% \begin{tabular}{|p{2.5cm}|c |c |c |c |c |c |c |c |}
+% \hline
+% \bd{Topologies}           & \bd{Linear} & \bd{Circular} & \bd{Elliptical} & \bd{Double Rings} & \bd{Wide Line} & \bd{Grid} & \bd{Tree} & \bd{Owheo WSN}   \\
+% \hline
+% \bd{Number of Motes}           & 20 & 20 & 20 & 46 & 45 & 72 & 25 & 37   \\
+% % \bd{of Motes}           &  &  &  &  &  &  &  &    \\
+% \hline
+% \end{tabular}
+% \caption{Number of motes used in each topological deployment}
+% \label{tab:topos}
+% \end{table*}
 
 The IDS requires Deluge protocol to be able to report the time of executing  a new version of its software.
 The protocol was originally implemented in TinyOS and later has been ported to other embedded operating systems including Contiki\footnote{\url{http://www.contiki-os.org}}. 
@@ -547,11 +548,11 @@ In addition to this, effects of changes in parameters like power level on the ID
 %\notedme{Not clear what you're talking about, specifically.}
 
 
-%The shape of the experiential topologies were designed as linear, circular, elliptical, double rings, wide line, grid, tree and other random topologies.
+We used topologies in experiments that had many shapes such as: linear, circular, elliptical, double rings, wide line, grid, tree and other random topologies, but do not have space to describe all of them here.
 %The names of the topologies here indicate that in each case the motes were deployed along the circumference of the geometrical shape that enabled packet propagation to take place according to a designed fashion.\notedme(1){drop---too obvious to justify saying.}
 %In each topology, minimum 20 nodes were deployed for a test to take place. 
 %More motes were necessary to replicate certain topologies.
-Table~\ref{tab:topos} shows the number of motes used in experiments in corresponding topological  deployments.
+% Table~\ref{tab:topos} shows the number of motes used in experiments in corresponding topological  deployments.
 The motes were placed at a distance of 30--35 meter to allow  multiple transmission paths to all motes. % <dme> en-dash for number ranges, not em-dash	% <ashraf> I am trying to increase my English and LaTeX vocabulary
 For most experiments, the radio transmission power level was set at 100\% which has an approximate maximum effective transmission range of 50 meters and is able to interfere other motes upto 100 meters away.
 The Owheo WSN topology was additionally tested at 50\%  to %quickly\notedme{?} 
