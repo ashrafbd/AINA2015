@@ -138,7 +138,7 @@ Reliability and safety critics, and other researchers, have frequently pointed o
 %\marginnote{Security threats in WSN and reasond. Problem definition}[2cm]
 
 %\subsection{Why WSN communication in robotics/any application need to be secured. }
-%If inputs from wireless sensors are forged, then catastrophic errorneous results are expected			
+%If inputs from wireless sensors are forged, then catastrophic erroneous results are expected			
 %\subsection{Why it is important to secure updates? How WSN updates can be forged to impede the capabilities of robotics}
 
 
@@ -152,10 +152,10 @@ The algorithm requires a minor modification of the OTA update protocol to send b
 AM is a single-hop, unreliable packet which are used to provide synchronous acknowledgements in TinyOS \cite{tep116}. %%It has a destination address, a type field, and a
 %They are used to provide synchronous acknowledgements~\cite{tep116}.
 %a message indicating update time.  %by incorporating Active Message (AM). 
-%Specifically a TinyOS Active Message (AM) is used to acieve this. Such messages 
+%Specifically a TinyOS Active Message (AM) is used to achieve this. Such messages 
 %AM is a single-hop, unreliable packet used for network abstraction in TinyOS. 
 %It has a destination address, a type field, and are used to provide synchronous acknowledgements~\cite{tep116}.\notedme{The AM text still strikes me as weird. I've tried to rewrite it a bit. In a computer OS, if you wanted to say you sent back a datagram containing the update time, that's just what you'd say. It makes Active Messages sound like something special, when you haven't presented anything that's special about them. It's also not clear whether you're talking about the AM facility itself, or the data contained with the particular AM you send.} 
-%<Ashraf>> I specified about AM because it is already an implemented datagram technique, which is handled by OS. One does not have to think about reimplemeting it, which need s special handling in different layers.
+%<Ashraf>> I specified about AM because it is already an implemented datagram technique, which is handled by OS. One does not have to think about reimplementing it, which need s special handling in different layers.
 The information carried by the datagram enables the IDS with a centralised view of network-wide knowledge that is processed and analysed to work out a  `Surprise Score' or `Intrusion Warning Score' (IWS) to indicate a possible intrusion.
 This work's contributions are two fold: 
 \begin{inparaenum}
@@ -163,7 +163,7 @@ This work's contributions are two fold:
 \item It is demonstrated that simulation can indicate the positions of WSN nodes that will best support the ability of similar IDSs to detect anomalies.
 %scheme i.e., the IDS expectations can provide useful insight for designing secure WSN.
 \end{inparaenum}
-%% <Ashraf> is this paragraph a repeatation of the previous one. But there are some useful info here
+%% <Ashraf> is this paragraph a repetition of the previous one. But there are some useful info here
 %\marginnote{Solution to the problem and contributions}[2cm]
 
 %\subsection{Organisation of the paper }
@@ -180,12 +180,12 @@ Finally, we conclude our arguments in Section~\ref{sec:concl}.
 \section{Background and Motivation}
 \label{sec:lit}
 
-%Data dessemination protocols
+%Data dissemination protocols
 %Design of these networks to ensure the protection of data faces the constraints of limited power and processing resources. [REFERENCE: An Outline of Security in Wireless Sensor Networks: Threats, Countermeasures and Implementations]
 The following section describes the background and motivation of the study.  It relates the effort to earlier research that has been performed in the field.
 
 
-%% <Ashraf>> I am importing the rest portion from ICARA menuscript with comments from dme 
+%% <Ashraf>> I am importing the rest portion from ICARA manuscript with comments from dme 
 Software update process using Deluge or other OTA protocols is specifically vulnerable and a lucrative attack target because of several reasons.
 First, the ability to infect a software update process implies effects beyond the updates only.
 Secondly, most of the the OTA update protocols do not employ enough cryptographic protection for source authentication, integrity verification and likewise. 
@@ -220,7 +220,7 @@ During this, security  measures on the sensor motes are deactivated or unavailab
 Additionally, the update process across the whole WSN contributes to a significant increase in traffic that an adversary may exploit to  mask his actions. 
 With this end in view, an attacker can clandestinely initiate an illegitimate update and inject his own program image to serve his intended purpose.
 This enables an adversary to steal sensitive information, log network events, even complete denial of service. 
-%Researchers put lot of effort to study these attacks and to devise the methods to minimize their impact on the network.
+%Researchers put lot of effort to study these attacks and to devise the methods to minimise their impact on the network.
 %\marginnote{Why we need to protect the update process}[2cm]
 
 
@@ -314,7 +314,7 @@ However, the mechanism of statistical treatment on information over a time perio
 In this section, we provide a brief overview of the system design and describe the evaluation environment. % and procedures.
 %The original system design is quite elaborate, but details have been left out to accommodate the space limitation.
 % <dme> I don't understand why you think it's elaborate. It's actually really simple!
-%It's helpful to both writer and reader to organize this section chronologically: that is, describe each procedure in the order it was performed. For example, DNA-extraction, purification, amplification, assay, detection. Or, study area, study population, sampling technique, variables studied, analysis method.
+%It's helpful to both writer and reader to organise this section chronologically: that is, describe each procedure in the order it was performed. For example, DNA-extraction, purification, amplification, assay, detection. Or, study area, study population, sampling technique, variables studied, analysis method.
 The proposed IDS will be evaluated using a set of simulations. %in comprehensive simulations.
 %While the system has been elaborately designed and aimed at testbed evaluation, it has not yet been performed at this stage of the research. 
 %\notedme{Dropped sentence here. What does ``aimed at testbed evaluation'' mean?}
@@ -697,7 +697,7 @@ While discussing the performance and effects of the proposed IDS in different to
 %\notedme{Put this earlier in the justification of discussing one topology in detail.}
 %<Ashraf>> This is the second sentence in the discussion section
 %\notedme(1){Is it closest to what you see in other papers? I'd not have thought so, in which case I'd think you need to justify why you're focusing on it... Also, there's unnecessary text repetition here.}
-%% <Ashraf> The discussion is taken this way because of the spacew limitation and otherwise introducing all the results would be repeatation of the same thing, I guess. I'll look for papers that describe similar things.
+%% <Ashraf> The discussion is taken this way because of the space limitation and otherwise introducing all the results would be reputation of the same thing, I guess. I'll look for papers that describe similar things.
 
 %\subsection{Data1 + Discussion}
 
@@ -955,3 +955,6 @@ In future,  the IDS can be implemented to examine real world performance includi
 \end{document}
 
 
+
+%  LocalWords:  Ashraful Alam dme Ashraf OSs Onat Contiki Cooja
+%  LocalWords:  uncompromised
